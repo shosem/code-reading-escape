@@ -1,0 +1,56 @@
+<div class="card mb-4">
+  <div class="card-body">
+    <h1 class="card-title h3"><%= @post.title %></h1>
+    <p class="card-text lead"><%= t(@status_key) %></p>
+  </div>
+</div>
+
+<% if @comment&.errors&.any? %>
+  <div class="alert alert-danger">
+    <ul class="mb-0">
+      <% @comment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<% if flash[:notice] %>
+  <div class="alert alert-success"><%= flash[:notice] %></div>
+<% end %>
+
+<h2 class="h5 mt-4">コメント</h2>
+
+<% if @post.comments.any? %>
+  <div class="row row-cols-1 g-2 mb-3">
+    <% @post.comments.each do |comment| %>
+      <div class="col">
+        <div class="card">
+          <div class="card-body py-2">
+            <strong><%= comment.name %></strong>
+            <p class="mb-0"><%= comment.body %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p class="text-muted">まだコメントはありません。</p>
+<% end %>
+
+<div class="card">
+  <div class="card-body">
+    <h3 class="h6 card-title">コメントを追加</h3>
+    <%= form_with model: [@post, @comment || Comment.new], url: post_comments_path(@post.slug), local: true do |f| %>
+      <div class="mb-2">
+        <%= f.label :name, "お名前", class: "form-label" %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+      <div class="mb-2">
+        <%= f.label :body, "本文", class: "form-label" %>
+        <%= f.text_area :body, class: "form-control" %>
+      </div>
+      <%= f.submit "投稿する", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
