@@ -43,3 +43,5 @@ docker compose up --build
 - Bootstrap 5 はCDN経由で読み込んでおり、アセットパイプライン(Sprockets/importmap)の設定は省いています。
 - 開発用に `SECRET_KEY_BASE` を直接環境変数で渡しています(本番運用は想定していません)。
 - Ruby/Railsのバージョンは `Gemfile` にあるとおり Ruby 3.3 / Rails 7.1 系を想定していますが、参加者向けの謎解きには直接関係しません。
+
+23:57  編集済み
