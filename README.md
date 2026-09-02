@@ -45,3 +45,4 @@ docker compose up --build
 - Ruby/Railsのバージョンは `Gemfile` にあるとおり Ruby 3.3 / Rails 7.1 系を想定していますが、参加者向けの謎解きには直接関係しません。
 
 23:57  編集済み
+23:54 編集済み
