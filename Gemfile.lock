@@ -87,6 +87,7 @@ GEM
     erb (6.0.7)
     erubi (1.13.1)
     ffi (1.17.4-aarch64-linux-gnu)
+    ffi (1.17.4-arm64-darwin)
     globalid (1.4.0)
       activesupport (>= 6.1)
     i18n (1.15.2)
@@ -113,6 +114,7 @@ GEM
       net-smtp
     marcel (1.2.1)
     mini_mime (1.1.5)
+    mini_portile2 (2.8.9)
     minitest (5.27.0)
     net-imap (0.6.6)
       date
@@ -125,6 +127,8 @@ GEM
       net-protocol
     nio4r (2.7.5)
     nokogiri (1.19.4-aarch64-linux-gnu)
+      racc (~> 1.4)
+    nokogiri (1.19.4-arm64-darwin)
       racc (~> 1.4)
     pp (0.6.4)
       prettyprint
@@ -188,6 +192,8 @@ GEM
     reline (0.7.0)
       io-console (~> 0.5)
     securerandom (0.4.1)
+    sqlite3 (1.7.3)
+      mini_portile2 (~> 2.8.0)
     sqlite3 (1.7.3-aarch64-linux)
     thor (1.5.0)
     timeout (0.6.1)
@@ -203,6 +209,7 @@ GEM
 
 PLATFORMS
   aarch64-linux-gnu
+  arm64-darwin-25
 
 DEPENDENCIES
   listen
